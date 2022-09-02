@@ -2,8 +2,8 @@
 import { galleryItems } from './gallery-items.js';
 // Описаний в документації
 import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
-import "./n";
+// Дополнительный импорт стилей
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 // Change code below this line
 
