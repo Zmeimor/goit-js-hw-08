@@ -1,40 +1,51 @@
 // Add imports above this line
-// Описан в документации
+import { galleryItems } from './gallery-items.js';
+// Описаний в документації
 import SimpleLightbox from "simplelightbox";
-// Дополнительный импорт стилей
-import "simplelightbox/dist/simple-lightbox.min.css";
-import { galleryItems } from './gallery-items';
+// Додатковий імпорт стилів
+import "./n";
+
 // Change code below this line
 
-console.log(galleryItems);
+// console.log();
 
-const placeForGalleryHtml = document.querySelector(".gallery");
-const galleryInserted = createGalleryMap (galleryItems);
 
-        placeForGalleryHtml.insertAdjacentHTML('beforeend', galleryInserted);
-        placeForGalleryHtml.addEventListener('click', openModal);
+const placeForFalleryHtml = document.querySelector(".gallery");
+const galleryInserted = createGalleryMap(galleryItems);
 
-        
-            function createGalleryMap (galleryItems) {
-                return galleryItems.map(({preview, description, original})=> {
-                return `<a class="gallery__link" href = "${original}"> <img class="gallery__image" src = ${preview} alt = "${description}" data-source=${original} /> </a>`;
-                }).join("");
-                }
+function createGalleryMap (galleryItems) {
+return galleryItems.map(({preview, description, original})=> {
+return `<a class="gallery__item" href=${original}> <img class="gallery__image" src=${preview} title = ${description}/></a>`;
+       }).join("");
+    }
 
-                function openModal(event) {
-                    event.preventDefault();
-                
-                    const instance = basicLightbox.create(`<img src = ${event.target.dataset.source} width="800" height="600">
-                    `);
-                    instance.show();
-                    window.addEventListener('keydown', reset);
-                    return;
-                    }
+placeForFalleryHtml.insertAdjacentHTML('beforeend', galleryInserted);
 
-                    function reset (ev){  
-                            if (ev.key === 'Escape') {
-                        const modalPicture = document.querySelector(".basicLightbox", ".basicLightbox--img", ".basicLightbox--visible");
-                        modalPicture.remove();
-                        return;
-                        }  
-                        } 
+placeForFalleryHtml.addEventListener('click', openModal);
+
+new SimpleLightbox('.gallery a', { captionDelay:500, 
+   doubleTapZoom: 1.3, rtl: true });
+
+// var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+//import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm";
+//import SimpleLightbox from "simplelightbox";
+
+function openModal(event) {
+   const imageLink = event.target.dataset.original;
+  SimpleLightbox('.gallery a', {caption});
+     gallery.captionsData(alt);
+
+gallery.on('show.simplelightbox', function () {
+//    // Do something…
+});
+
+gallery.on('error.simplelightbox', function (e) {
+   console.log(e); // Some usefull information
+});
+   
+
+const instance = basicLightbox.create(`
+<img src = ${imageLink} width="800" height="600">
+`);
+instance.show();
+}
