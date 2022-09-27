@@ -2,7 +2,6 @@
   "name": "goit-js-hw-08",
   "version": "1.0.0",
   "description": "**Read in other languages: [Русский](README.md), [Polski](README.pl.md).**",
-  "main": "index.js",
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.3",
     "ansi-styles": "^4.3.0",
@@ -128,6 +127,7 @@
   },
   "devDependencies": {},
   "scripts": {
+   "build": "parcel build src/*.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
