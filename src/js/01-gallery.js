@@ -4,6 +4,8 @@ import { galleryItems } from './gallery-items.js';
 import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.js";
+// Додатковий імпорт стилів
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 // Change code below this line
 
