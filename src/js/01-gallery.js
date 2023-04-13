@@ -2,8 +2,8 @@
 import { galleryItems } from './gallery-items.js';
 // Описаний в документації
 import SimpleLightbox from "simplelightbox";
-// Дополнительный импорт стилей
-import "simplelightbox/dist/simple-lightbox.min.css";
+// Додатковий імпорт стилів
+import "simplelightbox/dist/simple-lightbox.min.js";
 
 // Change code below this line
 
@@ -40,12 +40,12 @@ gallery.on('show.simplelightbox', function () {
 });
 
 gallery.on('error.simplelightbox', function (e) {
-   console.log(e); // Some usefull information
+	console.log(e); // Some usefull information
 });
    
 
-const instance = basicLightbox.create(`
-<img src = ${imageLink} width="800" height="600">
-`);
+// const instance = basicLightbox.create(`
+// <img src = ${imageLink} width="800" height="600">
+// `);
 instance.show();
 }
