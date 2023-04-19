@@ -1,18 +1,32 @@
 const feedbackForm = document.querySelector(".feedback-form");
-feedbackForm.addEventListener('submit', validDateTest);
-feedbackForm.addEventListener('input',  _.throttle(formLocalStorage,300));
 
 importToFormStorage();
+
+
+feedbackForm.addEventListener('submit', validDateTest);
+feedbackForm.addEventListener('input',  _.throttle(formLocalStorage,500));
 
 function importToFormStorage() {
     const dataStorage = JSON.parse(localStorage.getItem("feedback-form-state"));
     console.log(dataStorage);
-    if (dataStorage) {
-        for (key in dataStorage) {
-            feedbackForm[key].value = dataStorage[key];
-        }
-    }
+    if (!dataStorage) {
+        return
 };
+
+//test na object:
+
+const keys = Object.keys(dataStorage);
+console.log(keys);
+     
+for (const key in dataStorage) {
+  feedbackForm[key].value = dataStorage[key];
+  feedbackForm[key].textContent = feedbackForm[key].value
+  console.log(dataStorage[key])
+  // console.log(feedbackForm[key].name)
+  console.log(feedbackForm[key].value)
+  console.log(feedbackForm[key].textContent)
+}
+    }
 
 function formLocalStorage(event) {
     event.preventDefault();
