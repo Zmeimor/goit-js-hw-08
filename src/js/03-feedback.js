@@ -20,11 +20,11 @@ console.log(keys);
      
 for (const key in dataStorage) {
   feedbackForm[key].value = dataStorage[key];
-  feedbackForm[key].textContent = feedbackForm[key].value
-  console.log(dataStorage[key])
+  // feedbackForm[key].textContent = feedbackForm[key].value
+  // console.log(dataStorage[key])
   // console.log(feedbackForm[key].name)
   console.log(feedbackForm[key].value)
-  console.log(feedbackForm[key].textContent)
+  // console.log(feedbackForm[key].textContent)
 }
     }
 
